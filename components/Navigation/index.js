@@ -75,17 +75,17 @@ const Navigation = ({ className }) => {
 				</CustomLink>                
 			</Gx>
 			<Gx col={3} breakpoint={100}>
-				<CustomLink href="/d">
+				<CustomLink href="/search">
 					<Icon icon={faSearch} />
 				</CustomLink>                
 			</Gx>
 			<Gx col={3} breakpoint={100}>
-				<CustomLink href="/">
+				<CustomLink href="/rinki">
 					<Icon icon={faPlus} />
 				</CustomLink>                
 			</Gx>
 			<Gx col={3} breakpoint={100}>
-				<CustomLink href="/">
+				<CustomLink href="/settings">
 					<Icon icon={faCog} />
 				</CustomLink>                
 			</Gx>

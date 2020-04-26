@@ -31,7 +31,7 @@ const Home = () => {
 		return(
 			<Layout title="Home" >
 				<Container>
-					<p>moi</p>
+					<h3>Tervetuloa Ringit.fi palveluun.</h3>
 				</Container>
 			</Layout>
 		)

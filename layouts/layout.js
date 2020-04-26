@@ -35,8 +35,6 @@ const GlobalStyle = createGlobalStyle`
         margin-right: 0;
     }
     h4 {
-        margin-top: 0.3em; 
-        margin-bottom: 0.3em;
         margin-left: 0;
         margin-right: 0;
     }

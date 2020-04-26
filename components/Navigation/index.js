@@ -70,7 +70,7 @@ const Navigation = ({ className }) => {
     return(
 		<NavContainer className={className} >
 			<Gx col={3} breakpoint={100}>
-				<CustomLink href="/" >
+				<CustomLink href="/profile" >
 					<Icon icon={faUser} />
 				</CustomLink>                
 			</Gx>

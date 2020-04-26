@@ -4,9 +4,6 @@ import Container from '../Container';
 import Gx from '@tgrx/gx';
 
 const FooterContent = styled.div`
-    color: ${props => props.theme.colors.white};
-    background-color: ${props => props.theme.colors.persBlue};
-    bottom: -600px;
     width: 100%;
     height: 600px;
     margin-top: 100px;

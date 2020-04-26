@@ -2,19 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import Head from '../components//head';
 import { createGlobalStyle } from "styled-components";
-import TopNavigation from '../components/TopNavigation';
+import Navigation from '../components/Navigation';
 import PropTypes from 'prop-types';
-import Footer from '../components/Footer';
 import theme from "../theme";
 import { ThemeProvider } from 'styled-components';
-import BurgerMenu from '../components/BurgerMenu';
 
 const GlobalStyle = createGlobalStyle`
     body, html {
         margin: 0px;
         padding: 0px;
-        max-width: 100%;
-        color: white;
+		max-width: 100%;
         height: 100%;
 		font-family: "Montserrat", Arial, sans-serif;
 		font-display: swap;
@@ -108,32 +105,22 @@ const GlobalStyle = createGlobalStyle`
     
 `;
 
-const Background = styled.div `
-	background-color: ${props => props.theme.colors.persBlue}
 
-
-`
-const Burger = styled(BurgerMenu)`
-    display: none;
-    @media (max-width: ${props => props.theme.screenSize.tablet}) {
-        display: inline-block
-     }
-
-
-`
-const Nav = styled(TopNavigation)`
+const Nav = styled(Navigation)`
     display: inline-block;
-    @media (max-width: ${props => props.theme.screenSize.tablet}) {
-        display: none
-     }
+  
 
 `
+const Content = styled.div`
+	 min-height: 100vh;
+	 margin-bottom: -600px;
+`
+
 
 
 const Layout = ({title, description, route, children}) => {
     return(
             <ThemeProvider theme={theme}>
-            <Background>
 				<Head 
 					title={title}
 					description={description}
@@ -155,18 +142,18 @@ const Layout = ({title, description, route, children}) => {
 					
 				
                        
-             
-                <header>
-                    
-                    <Nav />
-                    <Burger />
+				<Content >
 
-                </header>
-                <GlobalStyle />
-                { children }
-                <Footer />
+					<header>
+						
+						<Nav />
 
-            </Background>
+					</header>
+					<GlobalStyle />
+					{ children }
+				</Content>
+
+
                
             </ThemeProvider>
 

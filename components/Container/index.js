@@ -27,7 +27,7 @@ const Container = ({children}) => {
         PropTypes.arrayOf(PropTypes.node),
         PropTypes.node,
         PropTypes.string
-    ]).isRequired
+    ])
  }
 
 export default Container;

@@ -1,0 +1,70 @@
+{
+  "name": "Ringit.fi",
+  "engines": {
+    "node": "12.13.0"
+  },
+  "scripts": {
+    "dev": "nodemon server.js",
+    "build": "npm run lint && next build",
+    "start": "NODE_ENV=production node server.js",
+    "lint": "eslint .",
+    "postinstall": "npm run build",
+    "lint-fix": "eslint --fix .",
+    "test": "jest",
+    "test:coveralls": "jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.27",
+    "@fortawesome/free-solid-svg-icons": "^5.12.1",
+    "@fortawesome/react-fontawesome": "^0.1.9",
+    "@react-keycloak/nextjs": "^1.0.0-alpha.16",
+    "@tgrx/gx": "^1.0.0-rc4",
+    "@zeit/next-css": "^1.0.1",
+    "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "es6-promise": "^4.2.8",
+    "express": "^4.17.1",
+    "firebase": "^7.14.0",
+    "heroku-ssl-redirect": "0.0.4",
+    "isomorphic-fetch": "^2.2.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "keycloak-js": "^9.0.0",
+    "marked": "^0.7.0",
+    "mysql": "^2.18.1",
+    "next": "^9.3.4",
+    "next-routes": "^1.4.2",
+    "nodemailer": "^6.4.2",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "npm": "^6.14.4",
+    "object-mapper": "^6.0.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-copy-to-clipboard": "^5.0.2",
+    "react-dom": "^16.12.0",
+    "react-flex": "^2.2.8",
+    "react-fontawesome": "^1.7.1",
+    "react-loader-spinner": "^3.1.5",
+    "react-markdown": "^4.2.2",
+    "react-spinners": "^0.8.0",
+    "shopify-buy": "^2.9.0",
+    "sql-template-strings": "^2.2.2",
+    "styled-components": "^4.4.1",
+    "url": "^0.11.0",
+    "use-auth0-hooks": "^0.7.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-styled-components": "^1.10.6",
+    "coveralls": "^3.0.11",
+    "cross-env": "^6.0.3",
+    "eslint": "^6.7.2",
+    "eslint-config-recommended": "^4.0.0",
+    "eslint-plugin-react": "^7.18.0",
+    "jest": "^25.2.7",
+    "nodemon": "^2.0.1"
+  },
+  "eslintIgnore": [
+    "tests/**"
+  ]
+}

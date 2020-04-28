@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../layouts/layout';
 // import styled from 'styled-components';
 import Container from '../components/Container';
+import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 
 // import { AppContext } from  '../context/Context';
 
@@ -37,4 +38,4 @@ const Home = () => {
 		)
 }
 
-export default Home
+export default withLoginRequired(withAuth(Home))

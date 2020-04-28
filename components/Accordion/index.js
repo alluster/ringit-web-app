@@ -1,9 +1,10 @@
-import React, { useState }from 'react';
+import React, { useState, useContext }from 'react';
 import styled, { css } from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBookmark } from '@fortawesome/free-solid-svg-icons'
+import { faBookmark, faStar } from '@fortawesome/free-solid-svg-icons'
 import Gx from '@tgrx/gx';
 import PropTypes from 'prop-types';
+import { AppContext } from  '../../context/Context'
 
 const AccordionContainer = styled.div `
     background-color: white;
@@ -27,8 +28,10 @@ const AccordionContent = styled.div `
 `;
 
 
-const Accordion = ( {header, children} ) => {
+const Accordion = ( {header, owner, children} ) => {
 	const [ toggle, setToggle ] = useState(false)
+	const context = useContext(AppContext)  
+
 	return(
 		<AccordionContainer 
 			onClick={ () => setToggle(!toggle)} open={toggle}
@@ -38,7 +41,11 @@ const Accordion = ( {header, children} ) => {
 			</Gx>
 			<span style={{ textAlign: "right" }}>
 				<Gx col={2} breakpoint={100} >
-					<FontAwesomeIcon icon={faBookmark} />
+					<FontAwesomeIcon icon={ 
+						owner === context.user.email ? faStar : faBookmark
+						} 
+						
+						/>
 				</Gx>
 			</span>
 			
@@ -52,6 +59,7 @@ const Accordion = ( {header, children} ) => {
 Accordion.propTypes = {
 	props: PropTypes.any,
 	header: PropTypes.string,
-	children: PropTypes.any
+	children: PropTypes.any,
+	owner: PropTypes.string
  };
 export default Accordion;

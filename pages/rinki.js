@@ -1,39 +1,36 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Layout from '../layouts/layout';
-// import { withRouter } from 'next/router';
-// import PropTypes from 'prop-types';
-// import fetch from 'isomorphic-unfetch';
+import { withRouter } from 'next/router';
+import Container from '../components/Container';
+import fetch from 'isomorphic-unfetch';
+import PropTypes from 'prop-types';
 
-const Rinki = () => {
-	
-	// function reformatName(y){
-	// 	if(y === null){ return "undefined" }
-	// 	else return y.replace('.', ' ').replace(/(?:^|\s)\S/g, a => a.toUpperCase());
-	// }
-	
 
-	useEffect(() => {
-	}, []);
+const Rinki = (props) => {
+
 	return(
-		<Layout 
-			title="Uusi rinki"
-		>
-			<h3>Tällä sivulla voit luoda uuden ringin</h3>
-		</Layout>		
+		<Layout title="Rinki" >
+			<Container>
+				<h3>{ props.rinki.name || "" }</h3>
+				<h4>Perustiedot</h4>
+				<h5>{ props.rinki.description || ""  }</h5>
+				<h5>Sijainti: { props.rinki.location || "" }</h5>
+			</Container>
+		</Layout>
 	)
 }
 
-// RINKI.propTypes = {
 
-	
-//  };
-//  Certification.getInitialProps = async function(router) {
-// 	const res = await fetch(`${process.env.AUTHO_RETURN_URL}/getcertification/${router.query.id}`)
-// 	const data = await res.json()
-// 	return {
-// 		certification: data[0]
-// 	}
-//   };
+Rinki.getInitialProps = async function(router) {
+	const res = await fetch(`${process.env.AUTHO_RETURN_URL}/api/getrinkibyid/${router.query.id}`)
+	const data = await res.json()
+	return {
+		rinki: data[0]
+	}
+  };
+  Rinki.propTypes = {
+	props: PropTypes.any,
+	rinki: PropTypes.any
 
-// export default withRouter(Certification);
-export default Rinki;
+ };
+export default withRouter(Rinki)

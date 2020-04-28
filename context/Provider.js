@@ -7,43 +7,11 @@ import axios from 'axios';
 const Provider = ({children}) => {
 	
 	const { isAuthenticated, login, logout, user, signup  } = useAuth();
-	const [ userCertifications, setUsercertifications ] = useState([]);
-	const [ certification, setCertification ] = useState();
-	const [ isLoading, setIsLoading ] = useState(false)
-	const [ loadingMessage, setLoadingMessage ] = useState()
+	const [ isLoading, setIsLoading ] = useState(false);
+	const [ loadingMessage, setLoadingMessage ] = useState();
+	const [ ringit, setRingit ] = useState([]);
+	const [ rinki, setRinki ] = useState([]);
 
-
-	const GetCertifications = (sub) => {
-		axios.get('/getusercertifications', {
-			params: {
-				owner: sub
-			}
-		})
-		.then(function (response) {
-			let data = response.data
-			setUsercertifications(data)
-		})
-		.catch(function (error) {
-			console.log(error);
-		})
-		.finally(function () {
-		});
-	}
-	const GetCertification =  (id) => {
-	
-		axios.get('/getcertification', {
-			params: {
-				id: id
-			}
-		})
-		.then(function (response) {
-			let data = response.data[0]
-			setCertification(data)
-		})
-		.catch(error => {
-			console.log(error);
-		});
-	};
 	const LoadingContent = () => {
 		setLoadingMessage("Loading content...") 
 		setTimeout(() => { 
@@ -53,27 +21,51 @@ const Provider = ({children}) => {
 			setLoadingMessage("")  
 		}, 14000)
 	}
-
+	const GetRingitByOwner = async (user) => {
+		await axios.get(`/api/getringitbyowner/${user}`, {
+		})
+		.then(function (response) {
+			let data = response.data
+			setRingit(data)
+		})
+		.catch(function (error) {
+			console.log(error);
+		})
+		.finally(function () {
+		});
+	}
+	const GetRinkiById = async (id) => {
+		await axios.get(`/api/getrinkibyid/${id}`, {
+		})
+		.then(function (response) {
+			let data = response.data[0]
+			console.log(data)
+			setRinki(data)
+		})
+		.catch(function (error) {
+			console.log(error);
+		})
+		.finally(function () {
+		});
+	}
 	useEffect(() => {
 	}, []);
         return (
             <AppContext.Provider 
                 value={{
+					GetRingitByOwner,
+					GetRinkiById,
+					rinki,
+					ringit,
 					signup,
-					GetCertifications,
-					userCertifications,
-					setUsercertifications,
                     logout,
                     isAuthenticated,
                     login,
 					user,
-					certification,
-					setCertification,
 					isLoading,
 					setIsLoading,
-					GetCertification,
 					LoadingContent,
-					loadingMessage
+					loadingMessage,
                 }} 
             >
                 {children}

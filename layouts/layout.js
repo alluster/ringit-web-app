@@ -159,7 +159,7 @@ const Layout = ({title, description, route, children}) => {
 }
     
 Layout.propTypes = {
-	children: PropTypes.object,
+	children: PropTypes.any,
 	title: PropTypes.string,
 	description: PropTypes.string,
 	route: PropTypes.string

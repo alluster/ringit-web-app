@@ -1,30 +1,37 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import styled, { css } from 'styled-components';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faBookmark } from '@fortawesome/free-solid-svg-icons'
-// import Link from 'next/link';
+// import Link from 'next/link';import { AppContext } from  '../context/Context'
+import { AppContext } from  '../../context/Context'
+import Link from 'next/link'
 import Gx from '@tgrx/gx';
 import PropTypes from 'prop-types';
-import Accordion from '../Accordion';
+import { faBookmark, faStar } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 
 const Block = styled.div `
-    color: black;
+	color: black;
+	background-color: white;
 	z-index: 100000;
     max-width: 100%;
     height: auto;
     padding: 10px;
-    border-radius: 4px;
-	margin-top: 30px;
-	background-color: white;
-	box-shadow: 
-		0 1px 2px rgba(0,0,0,0.02), 
-		0 2px 4px rgba(0,0,0,0.02), 
-		0 4px 8px rgba(0,0,0,0.02), 
-		0 8px 16px rgba(0,0,0,0.02),
-		0 16px 32px rgba(0,0,0,0.02), 
-		0 32px 64px rgba(0,0,0,0.02);
+	border-radius: 4px;
+    border-radius: 6px;
+    padding: 15px;
+    transition: box-shadow 0.1s ease 0s, transform 0.1s ease 0s;
+    transition-property: box-shadow, transform;
+    transition-duration: 0.1s, 0.1s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+	box-shadow: rgb(226, 226, 226) 0px 0px 0px 1px, rgba(34, 36, 38, 0.15) 0px 2px 8px 0px;
+	:hover {
+		
+
+	}
     ${props => {
 		if (props.open) return css`
 			height: auto;
@@ -33,31 +40,44 @@ const Block = styled.div `
 	
 `;
 
-let header = ""
-let content = ""
-const ContentBlock = (props) => {
 
-	// const AccordionContent = () => { 
-	// 	if(!props.content) return ( <p>No content available</p> )
-	// 	else props.content.map((item, i) => {
-	// 		<li key={i}>
-	// 			{item}
-	// 		</li>
-	// 	})
-	// }
+const ContentBlock = (props) => {
+	const context = useContext(AppContext)  
+	useEffect(() => {
+		context.GetRingitByOwner(context.user.email);
+	}, [])
+	const AccordionContent = context.ringit.map((item, i) => 
+			<div key={i}>
+				<Gx col={10} breakpoint={100}>
+					<Link href={`/rinki?id=${item.id}`} >
+						<a>
+							{item.name}
+						</a>
+					</Link>
+				</Gx>
+				<span style={{ textAlign: "right" }}>
+					<Gx col={2} breakpoint={100} >
+						<FontAwesomeIcon icon={ 
+							item.owner === context.user.email ? faStar : faBookmark
+							} 
+							
+							/>
+					</Gx>
+				</span>
+			</div>
+			
+
+			
+		)
+	
 
 	return(
 		<div>
 			<h4>{props.blockName || "Undefined name"}</h4>
 			<Block >
-				<Gx col={12} breakpoint={100}>
-					<Accordion 
-						header={header || "No header available"}
-					>
-					{content || <p>No content</p>} 
-						{/* {AccordionContent()} */}
-					</Accordion>
-				</Gx>
+	
+					{ context.ringit ? AccordionContent : <p>Loading...</p>  }
+
 			</Block>
 		</div>
 		

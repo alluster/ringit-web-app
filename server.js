@@ -17,7 +17,7 @@ var sslRedirect = require('heroku-ssl-redirect');
 	host: process.env.DATABASE_HOST,
 	user: process.env.DATABASE_USERNAME,
 	password: process.env.DATABASE_PASSWORD,
-	database: 'heroku_45c5f28302e7ba2'
+	database: 'heroku_79e2f033f8b9b65'
   });
  
 
@@ -30,11 +30,11 @@ app.prepare().then(() => {
       extended: true
     }));
    
-	server.get('/getcertification/:id', (req, res) => {
+	server.get('/api/getrinkibyid/:id', (req, res) => {
         pool.getConnection(function(err, connection) {
 
 			if (err) throw err; 
-			query = SQL`SELECT * FROM certifications WHERE id=${req.params.id}`
+			query = SQL`SELECT * FROM ringit WHERE id=${req.params.id}`
 			connection.query(
 				query,
 				function (error, results, fields) {
@@ -46,10 +46,10 @@ app.prepare().then(() => {
 		});
 	})
 	
-	server.get('/addcertification', (req, res) => {
+	server.get('/api/addrinki', (req, res) => {
 		pool.getConnection(function(err, connection) {
 			if (err) throw err; 
-			query = SQL`INSERT INTO certifications (id, description, date, owner, url, username ) VALUES (${req.query.id}, ${req.query.description},${req.query.date},${req.query.owner},${req.query.url}, ${req.query.username})`
+			query = SQL`INSERT INTO ringit (owner, created, name, location, image, description) VALUES (${req.query.owner}, ${req.query.created},${req.query.name},${req.query.location}, ${req.query.image}, ${req.query.description})`
 			connection.query(
 				query,
 				function (error, results, fields) {
@@ -60,10 +60,25 @@ app.prepare().then(() => {
 
 	})
 
-	server.get('/getusercertifications', (req, res) => {
+	server.get('/api/getringitbyowner/:email', (req, res) => {
 		pool.getConnection(function(err, connection) {
 			if (err) throw err; 
-			query = SQL`SELECT * FROM certifications WHERE owner=${req.query.owner}`
+			query = SQL`SELECT * FROM ringit WHERE owner=${req.params.email}`
+			connection.query(
+				query,
+				function (error, results, fields) {
+					res.send(results)
+					connection.release();
+					if (error) throw error;
+				}
+			);
+		});
+
+	})
+	server.get('/api/getrinkibycode/:code', (req, res) => {
+		pool.getConnection(function(err, connection) {
+			if (err) throw err; 
+			query = SQL`SELECT * FROM ringit WHERE id=${req.params.code}`
 			connection.query(
 				query,
 				function (error, results, fields) {

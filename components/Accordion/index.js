@@ -27,7 +27,6 @@ const AccordionContent = styled.div `
 	
 `;
 
-
 const Accordion = ( {header, owner, children} ) => {
 	const [ toggle, setToggle ] = useState(false)
 	const context = useContext(AppContext)  

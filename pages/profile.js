@@ -18,13 +18,4 @@ const Profile = () => {
 	)
 }
 
-//  Profile.getInitialProps = async function(useAuth) {
-// 	const {user}= useAuth()
-
-// 	await fetch(`${process.env.AUTHO_RETURN_URL}/api/getringitbyowner/${user.email}`)
-// 	const data = await res.json()
-// 	return {
-// 		ringit: data[0]
-// 	}
-//   };
 export default withLoginRequired(withAuth(Profile))

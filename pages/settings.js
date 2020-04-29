@@ -1,6 +1,6 @@
 import React, { useContext }from 'react';
 import Layout from '../layouts/layout';
-// import Container from '../components/Container';
+import Container from '../components/Container';
 // import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 import { AppContext } from  '../context/Context'
 // import ContentBlock from '../components/ContentBlock';
@@ -15,8 +15,11 @@ const Settings = () => {
 
 	return(
 		<Layout title="Search" >
-		<h3>Asetukset</h3>
+		<Container>
+			<h3>Asetukset</h3>
 			<button onClick={() => context.logout({ returnTo: process.env.AUTHO_RETURN_URL })}>Log out</button>
+		</Container>
+		
 		</Layout>
 	)
 }

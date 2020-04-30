@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import LayoutNoNavigation from '../layouts/Layoutnonavigation';
+import Layout from '../layouts/LayoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { AppContext } from  '../context/Context';
@@ -58,7 +58,7 @@ const Home = () => {
 
 	
 		return(
-			<LayoutNoNavigation title="Home" >
+			<Layout title="Home" >
 				<HomeContainer>
 					<h1 style={{
 						fontSize: '120px', 
@@ -94,7 +94,7 @@ const Home = () => {
 					</div>
 
 				</HomeContainer>
-			</LayoutNoNavigation>
+			</Layout>
 		)
 }
 

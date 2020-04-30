@@ -5,7 +5,6 @@ import Container from '../components/Container';
 import fetch from 'isomorphic-unfetch';
 import PropTypes from 'prop-types';
 
-
 const Rinki = (props) => {
 
 	return(
@@ -19,7 +18,6 @@ const Rinki = (props) => {
 		</Layout>
 	)
 }
-
 
 Rinki.getInitialProps = async function(router) {
 	const res = await fetch(`${process.env.AUTHO_RETURN_URL}/api/getrinkibyid/${router.query.id}`)

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Layout from '../layouts/layoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
@@ -84,18 +84,24 @@ const Home = () => {
 							}}>Tästä</p>
 						</a>
 					</Link>
+					<div>
 					<Link href="/profile">
 						<a>
 							<RegisterButton>Rekisteröidy</RegisterButton>
 
 						</a>
 					</Link>
+					</div>
+					
+					<div>
 					<Link href="/profile">
 						<a>
 							<SignInButton >Tai kirjaudu sisään</SignInButton>
 
 						</a>
 					</Link>
+					</div>
+					
 
 				</HomeContainer>
 			</Layout>

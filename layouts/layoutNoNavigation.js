@@ -12,7 +12,6 @@ const GlobalStyle = createGlobalStyle`
         padding: 0px;
 		max-width: 100% ;
         height: 100%;
-		font-family: 'Open Sans', sans-serif;
 		font-display: swap;
 		color: ${props => props.theme.colors.brand.text}
 		background-color: ${props => props.theme.colors.brand.background}
@@ -52,12 +51,17 @@ const GlobalStyle = createGlobalStyle`
         margin-left: 0;
 		margin-right: 0;
 		font-family: 'Roboto Slab', serif;
-    }
+	}
+	p {
+		font-family: 'Open Sans', sans-serif;
+
+	}
     img {
         max-width: 100%;
     }
     a {
 		all: unset;
+		font-family: 'Open Sans', sans-serif;
 		color: ${props => props.theme.colors.brand.primary};
     }
     a:link {

@@ -2,18 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import Head from '../components//head';
 import { createGlobalStyle } from "styled-components";
-import Navigation from '../components/Navigation';
 import PropTypes from 'prop-types';
 import theme from "../theme";
 import { ThemeProvider } from 'styled-components';
+import Navigation from '../components/Navigation';
 
 const GlobalStyle = createGlobalStyle`
     body, html {
         margin: 0px;
         padding: 0px;
-		max-width: 100%;
+		max-width: 100% ;
         height: 100%;
-		font-family: 'Open Sans', sans-serif;
 		font-display: swap;
 		color: ${props => props.theme.colors.brand.text}
 		background-color: ${props => props.theme.colors.brand.background}
@@ -53,12 +52,18 @@ const GlobalStyle = createGlobalStyle`
         margin-left: 0;
 		margin-right: 0;
 		font-family: 'Roboto Slab', serif;
-    }
+	}
+	p {
+		font-family: 'Open Sans', sans-serif;
+
+	}
     img {
         max-width: 100%;
     }
     a {
-        all: unset;
+		all: unset;
+		font-family: 'Open Sans', sans-serif;
+		color: ${props => props.theme.colors.brand.primary};
     }
     a:link {
         all: unset;
@@ -76,14 +81,18 @@ const GlobalStyle = createGlobalStyle`
         all: unset;
     }
     button {
-        all: unset;
+		all: unset;
+		font-family: 'Open Sans', sans-serif;
+
 	}
 
 
 
 
     input {
-        all: unset;
+		all: unset;
+		font-family: 'Open Sans', sans-serif;
+
         ::-webkit-input-placeholder {
     }
     :-moz-placeholder {
@@ -106,6 +115,7 @@ const GlobalStyle = createGlobalStyle`
     }
     
 `;
+
 
 
 const Nav = styled(Navigation)`

@@ -86,12 +86,18 @@ const Home = () => {
 							}}>Tästä</p>
 						</a>
 					</Link>
-					<div>
-						<RegisterButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Rekisteröidy </RegisterButton>
-					</div>
-					<div>
-						<SignInButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Tai kirjaudu sisään</SignInButton>
-					</div>
+					<Link href="/profile">
+						<a>
+							<RegisterButton>Rekisteröidy</RegisterButton>
+
+						</a>
+					</Link>
+					<Link href="/profile">
+						<a>
+							<SignInButton >Tai kirjaudu sisään</SignInButton>
+
+						</a>
+					</Link>
 
 				</HomeContainer>
 			</Layout>

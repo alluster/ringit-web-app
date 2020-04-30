@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const Input = styled.input`
 	padding: 10px; 
-	width: 100%;
+	width: 90%;
 	margin-top: 20px;
 	border: 1px solid ${props => props.theme.colors.brand.border}; 
 	-webkit-border-radius: 5px;
@@ -89,10 +89,10 @@ const AddRinki = () => {
 		<div>
 			
 				<form onSubmit={handleSubmit} >
-					<Input placeholder="Name" name="name" value={name} onChange={inputChange} type="text" />
-					<Input placeholder="Description" name="description" value={description} onChange={inputChange} type="text" />	
-					<Input placeholder="Location" name="location" value={location} onChange={inputChange} type="text" />
-					<SubmitButton onClick={e => handleSubmit(e)}>Submit</SubmitButton>
+					<Input placeholder="Ringin nimi" name="name" value={name} onChange={inputChange} type="text" />
+					<Input placeholder="Ringin kuvaus" name="description" value={description} onChange={inputChange} type="text" />	
+					<Input placeholder="Missä rinki sijaitsee" name="location" value={location} onChange={inputChange} type="text" />
+					<SubmitButton onClick={e => handleSubmit(e)}>Lisää rinki</SubmitButton>
 				</form>
         </div>
     )

@@ -3,14 +3,8 @@ import { useRouter } from 'next/router'
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
-
-
-
-
 function CustomLink({ children, href }) {
-  	const router = useRouter()
-  
-
+	const router = useRouter()
 	const Styled = styled.div`
 		margin-right: 10px;
 		color: ${props => props.theme.colors.brand.disabled};
@@ -29,7 +23,7 @@ function CustomLink({ children, href }) {
 	}
 
 	return (
-		<a  onClick={handleClick} >
+		<a onClick={handleClick} >
 			<Styled pathName={router.pathname} href={href} >
 				{children}
 			</Styled>
@@ -40,7 +34,9 @@ function CustomLink({ children, href }) {
 
 CustomLink.propTypes = {
 	children: PropTypes.any,
-	href: PropTypes.string
-	
- };
+	href: PropTypes.string,
+	theme: PropTypes.any,
+	pathName: PropTypes.string
+
+};
 export default CustomLink;

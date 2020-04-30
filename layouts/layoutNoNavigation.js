@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Head from '../components//head';
 import { createGlobalStyle } from "styled-components";
-import Navigation from '../components/Navigation';
 import PropTypes from 'prop-types';
 import theme from "../theme";
 import { ThemeProvider } from 'styled-components';
@@ -11,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
     body, html {
         margin: 0px;
         padding: 0px;
-		max-width: 100%;
+		max-width: 100% ;
         height: 100%;
 		font-family: 'Open Sans', sans-serif;
 		font-display: swap;
@@ -23,42 +22,43 @@ const GlobalStyle = createGlobalStyle`
 
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Bree Serif', serif;
+		font-family: 'Roboto Slab', serif;
     }
     h2 {
 
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Bree Serif', serif;
+		font-family: 'Roboto Slab', serif;
     }
     h3 {
   
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Bree Serif', serif;
+		font-family: 'Roboto Slab', serif;
     }
     h4 {
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Bree Serif', serif;
+		font-family: 'Roboto Slab', serif;
     }
     h5 {
       
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Bree Serif', serif;
+		font-family: 'Roboto Slab', serif;
     }
     h6 {
   
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Bree Serif', serif;
+		font-family: 'Roboto Slab', serif;
     }
     img {
         max-width: 100%;
     }
     a {
-        all: unset;
+		all: unset;
+		color: ${props => props.theme.colors.brand.primary};
     }
     a:link {
         all: unset;
@@ -108,11 +108,6 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 
-const Nav = styled(Navigation)`
-    display: inline-block;
-  
-
-`
 const Content = styled.div`
 	 min-height: 100vh;
 	 margin-bottom: -600px;
@@ -120,7 +115,7 @@ const Content = styled.div`
 
 
 
-const Layoutnonavigation = ({title, description, route, children}) => {
+const Layout = ({title, description, route, children}) => {
     return(
             <ThemeProvider theme={theme}>
 				<Head 
@@ -132,9 +127,9 @@ const Layoutnonavigation = ({title, description, route, children}) => {
                     <meta property="og:site_name" content="Certify" />
                     <link rel="icon" type="image/png" href="/favicon.ico" sizes="48x48" />
 					<meta charset="UTF-8" />
-					<meta name="keywords" content="Content,Certificate,Certifications,Free certification,"/>
-					<meta name="author" content="Certify"/>
-                    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
+					<meta name="keywords" content="Ringit.fi"/>
+					<meta name="author" content="Ringit.fi"/>
+					<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet" />
 
 
 				</Head>
@@ -158,7 +153,7 @@ const Layoutnonavigation = ({title, description, route, children}) => {
         );
 }
     
-Layoutnonavigation.propTypes = {
+Layout.propTypes = {
 	children: PropTypes.any,
 	title: PropTypes.string,
 	description: PropTypes.string,
@@ -166,4 +161,4 @@ Layoutnonavigation.propTypes = {
 }
     
 
-export default Layoutnonavigation;
+export default Layout;

@@ -53,37 +53,76 @@ const SignInButton = styled.button `
 		width: 100%;
     }
 `;
-const Home = () => {
+const About = () => {
 	const context = useContext(AppContext)
 
 	
 		return(
 			<LayoutNoNavigation title="Home" >
 				<HomeContainer>
-					<h1 style={{
-						fontSize: '120px', 
-						textAlign: 'center', 
-						margin:'0px'}}>
-						😍
-					</h1>
-					<h1 style={{
-						textAlign: 'center'}}>
-							Tervetuloa Ringit.fi palveluun.
-					</h1>
-					<p style={{
-						textAlign: 'center',
-						margin: '0px;'}}>
-							Olet vain pienen askeleen päässä oman ringin rakentamisesta. Voit vilkaista lisätietoa palvelustamme
-					</p>
-					<Link href="/about">
+				<Link href="/">
 						<a >
 							<p style={{
 							color: '#275EFE', 
 							textAlign: 'center',
 							textDecoration: 'underline',
 							fontWeight: 'bold',
-							margin: '0px;'
-							}}>Tästä</p>
+							marginTop: '20px;'
+							}}>Takaisin etusivulle</p>
+						</a>
+					</Link>
+					<h1 style={{
+						fontSize: '120px', 
+						textAlign: 'center', 
+						margin:'0px'}}>
+						🤔
+					</h1>
+					<h1 style={{
+						textAlign: 'center'}}>
+							Mikä on Ringit palvelun idea?
+					</h1>
+					<h2>Uudet palvelut mietityttävät aina. Tässä muutamia yleisiä käyttötapoja Ringit palvelulle</h2>
+					<h2>Kerhohuone</h2><br/>
+					<p style={{
+						textAlign: 'center',
+						margin: '0px;'}}>
+						
+						1. Jos sinulla on tarve jakaa jokin tila, esimerkiksi kerhouone, voit luoda oman ringin ja ihmiset voivat liittyä siihen koodin avulla.<br />
+						2. Voit laittaa koodin kerhohuoneen seinään. <br/>
+						3. Koodin avulla käyttäjät voivat liittyä Rinkiin ja varata kalenterista tilaa.<br />
+					</p>
+					<h2>Sauna</h2>
+					<p style={{
+						textAlign: 'center',
+						margin: '0px;'}}>
+							1. Taloyhtiössänne on sauna mutta haluaisitte luopua vakiovuoroista.<br />
+							2. Voit laittaa koodin saunan oveen. Koodin avulla asukkaat voivat liittyä Rinkiin ja varata kalenterista saunavuoron.<br />
+					</p>
+					<h2>Yogatunti</h2>
+					<p style={{
+						textAlign: 'center',
+						margin: '0px;'}}>
+							1. Haluat järjestää yogatunnin.<br />
+							2. Voit luoda oman ringin ja kutsua ystäviäsi tunnille. He näkevät kalenterista Yoga -tunnin ajankohdan.<br />
+							3. Voit pyytää kaikilta rinkiläisiltä Mobilepay maksun tunnin loputtua.<br />
+					</p>
+					<h2>Bändiharjoitukset</h2>
+					<p style={{
+						textAlign: 'center',
+						margin: '0px;'}}>
+							1. Bändillänne on bänditila. Tilassa harjoittelee 3 bändiä.<br />
+							2. Voit luoda oman ringin ja varata bändillesi kalenterista soittovuoron.<br />
+							3. Voit pyytää kaikilta bändien jäseniltä Mobilepay maksun kuun loputtua vuokranmaksua varten.<br />
+					</p>
+					<Link href="/">
+						<a >
+							<p style={{
+							color: '#275EFE', 
+							textAlign: 'center',
+							textDecoration: 'underline',
+							fontWeight: 'bold',
+							marginTop: '20px;'
+							}}>Takaisin etusivulle</p>
 						</a>
 					</Link>
 					<div>
@@ -98,4 +137,4 @@ const Home = () => {
 		)
 }
 
-export default Home;
+export default About;

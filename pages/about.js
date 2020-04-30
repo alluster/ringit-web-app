@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import LayoutNoNavigation from '../layouts/Layoutnonavigation';
+import Layout from '../layouts/layoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { AppContext } from  '../context/Context';
@@ -58,7 +58,7 @@ const About = () => {
 
 	
 		return(
-			<LayoutNoNavigation title="Home" >
+			<Layout title="About" >
 				<HomeContainer>
 				<Link href="/">
 						<a >
@@ -133,7 +133,7 @@ const About = () => {
 					</div>
 
 				</HomeContainer>
-			</LayoutNoNavigation>
+			</Layout>
 		)
 }
 

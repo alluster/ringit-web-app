@@ -14,7 +14,7 @@ const Settings = () => {
 	
 
 	return(
-		<Layout title="Search" >
+		<Layout title="Settings" >
 		<Container>
 			<h3>Asetukset</h3>
 			<button onClick={() => context.logout({ returnTo: process.env.AUTHO_RETURN_URL })}>Log out</button>

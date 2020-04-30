@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import Layout from '../layouts/LayoutNoNavigation';
+import Layout from '../layouts/layoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { AppContext } from  '../context/Context';

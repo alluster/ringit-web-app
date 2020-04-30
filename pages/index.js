@@ -2,7 +2,6 @@ import React, { useContext } from 'react';
 import Layout from '../layouts/layoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { AppContext } from  '../context/Context';
 
 
 const HomeContainer = styled.div`
@@ -54,7 +53,6 @@ const SignInButton = styled.button `
     }
 `;
 const Home = () => {
-	const context = useContext(AppContext)
 
 	
 		return(

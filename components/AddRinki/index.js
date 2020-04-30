@@ -9,28 +9,27 @@ import axios from 'axios';
 
 
 const Input = styled.input`
-	font-family: inherit;
+	padding: 10px; 
 	width: 100%;
-	border: 0;
-	border-bottom: 1px solid gray;
-	outline: 0;
-	color: $white;
-	padding: 7px 0;
-	background: transparent;
-	transition: border-color 0.2s;
-  
-	::placeholder {
-		color: gray;
-		font-size: 10px;
-		font-weight: 300;
-		font-style: italic;	  
+	margin-top: 20px;
+	border: 1px solid ${props => props.theme.colors.brand.border}; 
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	background-color: white;
+	:focus {
+		border-color:#333;
 	}
-  
+	::placeholder {
+		color: ${props => props.theme.colors.brand.disabled}
+		font-size: 10px;
+		font-weight: 400;
+	}
 	
-}`
+		
+	}`
 
 const SubmitButton = styled.button `
-	background-color: blue;
+	background-color: ${props => props.theme.colors.brand.primary};
 	color: white;
 	-webkit-text-fill-color: white;
 	height: 40px; border-radius: 20px;

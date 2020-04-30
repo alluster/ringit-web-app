@@ -13,7 +13,14 @@ export default {
         darkGray: "#9E9E9E",
         persOrange: '#FA4000',
         persOrangeDark: '#e55124',
-        persBlue: '#090e2a',
+		persBlue: '#090e2a',
+		brand: {
+			background: '#F6F8FF',
+			border: '#E3E8FA',
+			text: '#33343C',
+			primary: '#275EFE',
+			disabled: '#9499BA'
+		}
     },
     fontWeight: {
         thin: '300',

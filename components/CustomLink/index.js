@@ -1,24 +1,41 @@
 import React from 'react';
 import { useRouter } from 'next/router'
 import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+
+
+
+
 
 function CustomLink({ children, href }) {
-  const router = useRouter()
-  const style = {
-    marginRight: 10,
-    color: router.pathname === href ? '#3461FF' : '#85A0FF',
-  }
+  	const router = useRouter()
   
-  const handleClick = e => {
-    e.preventDefault()
-    router.push(href)
-  }
 
-  return (
-    <a href={href} onClick={handleClick} style={style}>
-      {children}
-    </a>
-  )
+	const Styled = styled.div`
+		margin-right: 10px;
+		color: ${props => props.theme.colors.brand.disabled};
+		${props => {
+			if (props.pathName === href) return css`
+				color: ${props => props.theme.colors.brand.primary};
+			`;
+		}};
+
+	`
+
+ 
+	const handleClick = e => {
+		e.preventDefault()
+		router.push(href)
+	}
+
+	return (
+		<a  onClick={handleClick} >
+			<Styled pathName={router.pathname} href={href} >
+				{children}
+			</Styled>
+		</a>
+	
+	)
 }
 
 CustomLink.propTypes = {

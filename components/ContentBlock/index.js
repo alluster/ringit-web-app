@@ -18,10 +18,11 @@ const Block = styled.div `
 	z-index: 100000;
     max-width: 100%;
     height: auto;
-    padding: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+
 	border-radius: 4px;
     border-radius: 6px;
-    padding: 15px;
     transition: box-shadow 0.1s ease 0s, transform 0.1s ease 0s;
     transition-property: box-shadow, transform;
     transition-duration: 0.1s, 0.1s;
@@ -40,6 +41,16 @@ const Block = styled.div `
 	
 `;
 
+const NameLink = styled.h5 `
+	font-weight: bold;
+	margin-top: 20px;
+`
+
+
+const AccordionBox = styled.div `
+	border-bottom: 0.2px solid #EEEEEE
+
+`
 
 const ContentBlock = (props) => {
 	const context = useContext(AppContext)  
@@ -47,24 +58,26 @@ const ContentBlock = (props) => {
 		context.GetRingitByOwner(context.user.email);
 	}, [])
 	const AccordionContent = context.ringit.map((item, i) => 
-			<div key={i}>
+			<AccordionBox key={i}>
 				<Gx col={10} breakpoint={100}>
 					<Link href={`/rinki?id=${item.id}`} >
 						<a>
-							{item.name}
+							<NameLink>{item.name} </NameLink>
 						</a>
 					</Link>
 				</Gx>
 				<span style={{ textAlign: "right" }}>
 					<Gx col={2} breakpoint={100} >
-						<FontAwesomeIcon icon={ 
-							item.owner === context.user.email ? faStar : faBookmark
-							} 
-							
+						<NameLink>
+							<FontAwesomeIcon icon={ 
+								item.owner === context.user.email ? faStar : faBookmark
+								} 
+									
 							/>
+						</NameLink>
 					</Gx>
 				</span>
-			</div>
+			</AccordionBox>
 			
 
 			

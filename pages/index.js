@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '../layouts/layout';
+import LayoutNoNavigation from '../layouts/Layoutnonavigation';
 // import styled from 'styled-components';
 import Container from '../components/Container';
 
@@ -29,11 +29,11 @@ const Home = () => {
 
 	
 		return(
-			<Layout title="Home" >
+			<LayoutNoNavigation title="Home" >
 				<Container>
 					<h3>Tervetuloa Ringit.fi palveluun.</h3>
 				</Container>
-			</Layout>
+			</LayoutNoNavigation>
 		)
 }
 

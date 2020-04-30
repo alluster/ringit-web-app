@@ -23,36 +23,36 @@ const GlobalStyle = createGlobalStyle`
 
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Bree Serif', serif;
     }
     h2 {
 
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Bree Serif', serif;
     }
     h3 {
   
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Bree Serif', serif;
     }
     h4 {
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Bree Serif', serif;
     }
     h5 {
       
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Bree Serif', serif;
     }
     h6 {
   
         margin-left: 0;
 		margin-right: 0;
-		font-family: 'Roboto Slab', serif;
+		font-family: 'Bree Serif', serif;
     }
     img {
         max-width: 100%;
@@ -120,7 +120,7 @@ const Content = styled.div`
 
 
 
-const Layout = ({title, description, route, children}) => {
+const Layoutnonavigation = ({title, description, route, children}) => {
     return(
             <ThemeProvider theme={theme}>
 				<Head 
@@ -132,9 +132,9 @@ const Layout = ({title, description, route, children}) => {
                     <meta property="og:site_name" content="Certify" />
                     <link rel="icon" type="image/png" href="/favicon.ico" sizes="48x48" />
 					<meta charset="UTF-8" />
-					<meta name="keywords" content="Ringit.fi"/>
-					<meta name="author" content="Ringit.fi"/>
-					<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet" />
+					<meta name="keywords" content="Content,Certificate,Certifications,Free certification,"/>
+					<meta name="author" content="Certify"/>
+                    <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet" />
 
 
 				</Head>
@@ -145,7 +145,6 @@ const Layout = ({title, description, route, children}) => {
 
 					<header>
 						
-						<Nav />
 
 					</header>
 					<GlobalStyle />
@@ -159,7 +158,7 @@ const Layout = ({title, description, route, children}) => {
         );
 }
     
-Layout.propTypes = {
+Layoutnonavigation.propTypes = {
 	children: PropTypes.any,
 	title: PropTypes.string,
 	description: PropTypes.string,
@@ -167,4 +166,4 @@ Layout.propTypes = {
 }
     
 
-export default Layout;
+export default Layoutnonavigation;

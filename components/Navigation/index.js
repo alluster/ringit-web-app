@@ -47,9 +47,9 @@ const NavContainer = styled.div`
     line-height: 40px;
 	min-width: 100%;
 	height: 40px;
-	bottom: 0;
-	position: fixed;
-	margin-top: -40px;
+	top: 0;
+	position: relative;
+	margin-bottom: -40px;
 	background-color: white;
 	box-shadow:
 	2.8px 0 2.2px rgba(0, 0, 0, 0.034),

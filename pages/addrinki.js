@@ -3,6 +3,7 @@ import Layout from '../layouts/layout';
 // import { withRouter } from 'next/router';
 // import PropTypes from 'prop-types';
 import AddRinki from '../components/AddRinki';
+import Container from '../components/Container';
 
 const Addrinki = () => {
 
@@ -12,8 +13,10 @@ const Addrinki = () => {
 		<Layout 
 			title="Uusi rinki"
 		>
-			<h3>Tällä sivulla voit luoda uuden ringin</h3>
-			<AddRinki />
+			<Container>
+				<h3>Luo uusi Rinki</h3>
+				<AddRinki />
+			</Container>
 		</Layout>		
 	)
 }

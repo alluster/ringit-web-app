@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const HomeContainer = styled.div`
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 60px;
 	padding-left: 10px;
 	padding-right: 10px;
 
@@ -58,15 +58,16 @@ const Home = () => {
 		return(
 			<Layout title="Home" >
 				<HomeContainer>
-					<h1 style={{
-						fontSize: '120px', 
-						textAlign: 'center', 
-						margin:'0px'}}>
-						😍
-					</h1>
+					
 					<h1 style={{
 						textAlign: 'center'}}>
 							Tervetuloa Ringit.fi palveluun.
+					</h1>
+					<h1 style={{
+						fontSize: '80px', 
+						textAlign: 'center', 
+						margin:'0px'}}>
+						😍
 					</h1>
 					<p style={{
 						textAlign: 'center',

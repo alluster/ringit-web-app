@@ -1,4 +1,6 @@
-module.exports = {
+const withLess = require('@zeit/next-less')
+
+module.exports = withLess({	
 	env: {
 		HOST: process.env.HOST,
 		AUTHO_DOMAIN: process.env.AUTHO_DOMAIN,
@@ -24,5 +26,7 @@ module.exports = {
 	}
 
 	return config
-  }
-}
+  },
+  
+
+})

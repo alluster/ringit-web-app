@@ -21,8 +21,8 @@ class MyDocument extends Document {
                 <body>
                     <Main />
                     <NextScript />
-					<script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
-                </body>
+					<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital@1&family=Roboto+Slab:wght@700&display=swap" rel="stylesheet" />
+				</body>
             </html>
         );
     }

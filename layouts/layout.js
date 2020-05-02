@@ -12,7 +12,8 @@ const GlobalStyle = createGlobalStyle`
         margin: 0px;
         padding: 0px;
 		max-width: 100% ;
-        height: 100%;
+		height: 100%;
+		font-family: 'Open Sans', sans-serif;
 		font-display: swap;
 		color: ${props => props.theme.colors.brand.text}
 		background-color: ${props => props.theme.colors.brand.background}
@@ -23,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
         margin-left: 0;
 		margin-right: 0;
 		font-family: 'Roboto Slab', serif;
+		font-weight: 500;
     }
     h2 {
 
@@ -144,7 +146,6 @@ const Layout = ({title, description, route, children}) => {
 					<meta charset="UTF-8" />
 					<meta name="keywords" content="Ringit.fi"/>
 					<meta name="author" content="Ringit.fi"/>
-					<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet" />
 
 
 				</Head>

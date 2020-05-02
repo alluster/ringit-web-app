@@ -4,6 +4,7 @@ import { withRouter } from 'next/router';
 import Container from '../components/Container';
 import fetch from 'isomorphic-unfetch';
 import PropTypes from 'prop-types';
+import Reservation from '../components/Reservation';
 
 const Rinki = (props) => {
 
@@ -14,6 +15,7 @@ const Rinki = (props) => {
 				<h4>Perustiedot</h4>
 				<h5>{ props.rinki.description || ""  }</h5>
 				<h5>Sijainti: { props.rinki.location || "" }</h5>
+				<Reservation />
 			</Container>
 		</Layout>
 	)

@@ -59,6 +59,34 @@ app.prepare().then(() => {
 		});
 
 	})
+	server.get('/api/addusertorinki', (req, res) => {
+		pool.getConnection(function(err, connection) {
+			if (err) throw err; 
+			query = SQL`INSERT INTO shared_ringit (id_rinki, id_user, user_email) VALUES (${req.query.id_rinki}, ${req.query.id_user}, ${req.query.user_email})`
+			connection.query(
+				query,
+				function (error, results, fields) {
+				connection.release();
+				if (error) throw error;
+			});
+		});
+
+	})
+	server.get('/api/getrinkiusers/:id', (req, res) => {
+		pool.getConnection(function(err, connection) {
+			if (err) throw err; 
+			query = SQL`SELECT * FROM shared_ringit WHERE id_rinki=${req.params.id}`
+			connection.query(
+				query,
+				function (error, results, fields) {
+					res.send(results)
+					connection.release();
+					if (error) throw error;
+				}
+			);
+		});
+
+	})
 
 	server.get('/api/getringitbyowner/:email', (req, res) => {
 		pool.getConnection(function(err, connection) {

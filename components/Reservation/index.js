@@ -4,8 +4,7 @@ import React, { useEffect, useState } from 'react';
 // import PropTypes from 'prop-types';
 import { withRouter } from 'next/router';
 import WeekCalendar from 'react-week-calendar';
-import 'react-week-calendar/dist/style.less';
-import moment from 'moment';
+import * as moment from 'moment';
 
 const InitialInterval = [{
 	uid: null,

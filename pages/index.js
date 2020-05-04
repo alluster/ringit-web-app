@@ -71,7 +71,7 @@ const Home = () => {
 					</h1>
 					<p style={{
 						textAlign: 'center',
-						margin: '0px;'}}>
+						margin: '0px'}}>
 							Olet vain pienen askeleen päässä oman ringin rakentamisesta. Voit vilkaista lisätietoa palvelustamme
 					</p>
 					<Link href="/about">
@@ -81,7 +81,7 @@ const Home = () => {
 							textAlign: 'center',
 							textDecoration: 'underline',
 							fontWeight: 'bold',
-							margin: '0px;'
+							margin: '0px'
 							}}>Tästä</p>
 						</a>
 					</Link>

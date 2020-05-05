@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import Layout from '../layouts/layout';
 import Container from '../components/Container';
 import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 import ContentBlock from '../components/ContentBlock';
 import styled from 'styled-components';
 import Link from 'next/link';
+import { AppContext } from '../context/Context';
+import fetch from 'isomorphic-unfetch';
+import { withRouter } from 'next/router';
 
 const AddNewButton = styled.button `
 	background-color: ${props => props.theme.colors.brand.primary};
@@ -24,13 +27,16 @@ const AddNewButton = styled.button `
 		width: 100%;
     }
 `;
-const Profile = () => {
+const Profile = (props) => {
+	
+	console.log(props)
 	return(
 		<Layout title="Profile" >
 			<Container>
 				<h3>Oma sivu</h3>
 			
 				<ContentBlock 
+					ringit={props.ringit}
 					blockName="Ringit"
 				/>
 				<Link href="/addrinki">
@@ -42,5 +48,14 @@ const Profile = () => {
 		</Layout>
 	)
 }
-
-export default withLoginRequired(withAuth(Profile))
+Profile.getInitialProps = async function() {
+	const profiledata = await fetch(`${process.env.AUTHO_RETURN_URL}/api/getringitbyowner/aleksanteri.heliovaara@gmail.com`)
+	const data = await profiledata.json();
+	return {
+		ringit: data,
+		
+	}
+	
+	
+  };
+export default withRouter(withLoginRequired(withAuth(Profile)))

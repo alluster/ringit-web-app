@@ -16,15 +16,16 @@ const onRedirecting = () => {
 	);
 };
 class MyApp extends App {
+
   render() {
+
     const { Component, pageProps } = this.props;
     return (
 		<Auth0Provider
-		onRedirecting={onRedirecting}
-
+			onRedirecting={onRedirecting}
 			domain={`${process.env.AUTHO_DOMAIN}`}
 			clientId={`${process.env.AUTHO_CLIENT_ID}`}
-			redirectUri={`${process.env.AUTHO_REDIRECT_URI}`}
+			redirectUri={`${process.env.AUTHO_REDIRECT_URI}` }
 		>
 			<Provider>
 				<Component {...pageProps} />

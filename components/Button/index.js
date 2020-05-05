@@ -33,7 +33,6 @@ Button.propTypes = {
 	text: PropTypes.string,
 	onClick: PropTypes.any,
 	children: PropTypes.any
-
  };
 
 export default Button;

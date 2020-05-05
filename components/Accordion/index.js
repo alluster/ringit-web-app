@@ -12,7 +12,6 @@ const AccordionContainer = styled.div `
 	z-index: 100000;
     max-width: 100%;
     height: auto;
-    
 `;
     
 const AccordionContent = styled.div `

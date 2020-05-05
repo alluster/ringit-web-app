@@ -98,6 +98,7 @@ const ContentBlock = (props) => {
 }
 ContentBlock.propTypes = {
 	props: PropTypes.any,
-	blockName: PropTypes.string
+	blockName: PropTypes.string,
+	ringit: PropTypes.any
  };
 export default ContentBlock;

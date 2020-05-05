@@ -1,13 +1,14 @@
-import React, {useContext} from 'react';
+import React from 'react';
 import Layout from '../layouts/layout';
 import Container from '../components/Container';
 import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 import ContentBlock from '../components/ContentBlock';
 import styled from 'styled-components';
 import Link from 'next/link';
-import { AppContext } from '../context/Context';
+// import { AppContext } from '../context/Context';
 import fetch from 'isomorphic-unfetch';
 import { withRouter } from 'next/router';
+import PropTypes from 'prop-types';
 
 const AddNewButton = styled.button `
 	background-color: ${props => props.theme.colors.brand.primary};
@@ -58,4 +59,8 @@ Profile.getInitialProps = async function() {
 	
 	
   };
+  Profile.propTypes = {
+
+	ringit: PropTypes.any
+ };
 export default withRouter(withLoginRequired(withAuth(Profile)))

@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import Gx from '@tgrx/gx';
 import PropTypes from 'prop-types';
-// import { AppContext } from  '../../context/Context'
 
 const AccordionContainer = styled.div `
     background-color: white;

@@ -22,7 +22,6 @@ const AccordionContent = styled.div `
 			display: block;
 		`;
 	}};
-	
 `;
 
 const Accordion = ( {header, children} ) => {

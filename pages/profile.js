@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Link from 'next/link';
 // import { AppContext } from '../context/Context';
 import fetch from 'isomorphic-unfetch';
-import { withRouter } from 'next/router';
 import PropTypes from 'prop-types';
 
 const AddNewButton = styled.button `
@@ -63,4 +62,4 @@ Profile.getInitialProps = async function() {
 
 	ringit: PropTypes.any
  };
-export default withRouter(withLoginRequired(withAuth(Profile)))
+export default withLoginRequired(withAuth(Profile))

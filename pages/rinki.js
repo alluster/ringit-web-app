@@ -7,6 +7,7 @@ import PropTypes from 'prop-types';
 import { AppContext } from '../context/Context';
 import Reservation from '../components/Reservation';
 import axios from 'axios';
+import Button from '../components/Button';
 
 const Rinki = (props) => {
 
@@ -53,7 +54,7 @@ useEffect(() => {
 				<h4>Perustiedot</h4>
 				<h5>{ props.rinki.description || ""  }</h5>
 				<h5>Sijainti: { props.rinki.location || "" }</h5>
-				<button onClick={e => addUserToRinki(e)}>Liity rinkiin</button>
+				<Button onClick={e => addUserToRinki(e)}>Liity rinkiin</Button>
 				<Reservation />
 				<h4>Ringin jäsenet</h4>
 				{users()}

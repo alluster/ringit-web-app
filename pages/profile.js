@@ -24,6 +24,8 @@ const AddNewButton = styled.button `
 	margin-top: 50px;
 	width: 500px;
 	@media (max-width: ${props => props.theme.screenSize.tablet}) {
+
+		
 		width: 100%;
     }
 `;

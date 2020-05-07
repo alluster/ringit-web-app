@@ -18,10 +18,16 @@ const ImageContainer = styled.div`
     max-width: 800px;
     margin: auto;
     @media (max-width: ${props => props.theme.screenSize.tablet}) {
-        max-width: 100%;
+		max-width: 100%;
     }
 
-    `
+	`;
+	const Image = styled.img`
+	max-height: 30vh;
+
+
+	`
+
 
 const RegisterButton = styled.button `
 	background-color: ${props => props.theme.colors.brand.primary};
@@ -72,7 +78,7 @@ const Home = () => {
 							Tervetuloa Ringit.fi palveluun.
 					</h1>
 					<ImageContainer>
-							<img src={image} alt="Welcome to Ringit" /> 
+							<Image src={image} alt="Welcome to Ringit" /> 
 					</ImageContainer>
 		
 					<div>

@@ -11,6 +11,7 @@ const Provider = ({children}) => {
 	const [ loadingMessage, setLoadingMessage ] = useState();
 	const [ ringit, setRingit ] = useState([]);
 	const [ rinki, setRinki ] = useState([]);
+	const [ authenticated, setAuthenticated ] = useState(false)
 
 	const LoadingContent = () => {
 		setLoadingMessage("Loading content...") 
@@ -59,7 +60,9 @@ const Provider = ({children}) => {
 					ringit,
 					signup,
                     logout,
-                    isAuthenticated,
+					isAuthenticated,
+					authenticated,
+					setAuthenticated,
                     login,
 					user,
 					isLoading,

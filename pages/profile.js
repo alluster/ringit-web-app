@@ -1,12 +1,13 @@
 import React from 'react';
 import Layout from '../layouts/layout';
 import Container from '../components/Container';
+// import withAuth  from '../components/withAuth';
 import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 import ContentBlock from '../components/ContentBlock';
 import styled from 'styled-components';
 import Link from 'next/link';
 // import { AppContext } from '../context/Context';
-import fetch from 'isomorphic-unfetch';
+// import fetch from 'isomorphic-unfetch';
 import PropTypes from 'prop-types';
 
 const AddNewButton = styled.button `
@@ -31,7 +32,6 @@ const AddNewButton = styled.button `
 `;
 const Profile = (props) => {
 	
-	console.log(props)
 	return(
 		<Layout title="Profile" >
 			<Container>
@@ -50,16 +50,16 @@ const Profile = (props) => {
 		</Layout>
 	)
 }
-Profile.getInitialProps = async function() {
-	const profiledata = await fetch(`${process.env.AUTHO_RETURN_URL}/api/getringitbyowner/aleksanteri.heliovaara@gmail.com`)
-	const data = await profiledata.json();
-	return {
-		ringit: data,
+// Profile.getInitialProps = async function() {
+// 	const profiledata = await fetch(`${process.env.AUTHO_RETURN_URL}/api/getringitbyowner/aleksanteri.heliovaara@gmail.com`)
+// 	const data = await profiledata.json();
+// 	return {
+// 		ringit: data,
 		
-	}
+// 	}
 	
 	
-  };
+//   };
   Profile.propTypes = {
 
 	ringit: PropTypes.any

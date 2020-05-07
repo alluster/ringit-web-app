@@ -7,7 +7,7 @@ import { AppContext } from  '../context/Context';
 
 const HomeContainer = styled.div`
 	text-align: center;
-	margin-top: 100px;
+	margin-top: 40px;
 	padding-left: 10px;
 	padding-right: 10px;
 
@@ -71,18 +71,13 @@ const About = () => {
 							}}>Takaisin etusivulle</p>
 						</a>
 					</Link>
-					<h1 style={{
-						fontSize: '120px', 
-						textAlign: 'center', 
-						margin:'0px'}}>
-						🤔
-					</h1>
+					
 					<h1 style={{
 						textAlign: 'center'}}>
 							Mikä on Ringit palvelun idea?
 					</h1>
-					<h2>Uudet palvelut mietityttävät aina. Tässä muutamia yleisiä käyttötapoja Ringit palvelulle</h2>
-					<h2>Kerhohuone</h2><br/>
+					<h4>Uudet palvelut mietityttävät aina. Tässä muutamia yleisiä käyttötapoja Ringit palvelulle</h4>
+					<h2>Kerhohuone</h2>
 					<p style={{
 						textAlign: 'center',
 						margin: '0px;'}}>

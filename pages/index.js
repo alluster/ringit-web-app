@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../layouts/layoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
+const image = './intro.png'
 
 
 const HomeContainer = styled.div`
@@ -13,7 +14,14 @@ const HomeContainer = styled.div`
 
 `
 
+const ImageContainer = styled.div`
+    max-width: 800px;
+    margin: auto;
+    @media (max-width: ${props => props.theme.screenSize.tablet}) {
+        max-width: 100%;
+    }
 
+    `
 
 const RegisterButton = styled.button `
 	background-color: ${props => props.theme.colors.brand.primary};
@@ -63,28 +71,10 @@ const Home = () => {
 						textAlign: 'center'}}>
 							Tervetuloa Ringit.fi palveluun.
 					</h1>
-					<h1 style={{
-						fontSize: '80px', 
-						textAlign: 'center', 
-						margin:'0px'}}>
-						😍
-					</h1>
-					<p style={{
-						textAlign: 'center',
-						margin: '0px'}}>
-							Olet vain pienen askeleen päässä oman ringin rakentamisesta. Voit vilkaista lisätietoa palvelustamme
-					</p>
-					<Link href="/about">
-						<a >
-							<p style={{
-							color: '#275EFE', 
-							textAlign: 'center',
-							textDecoration: 'underline',
-							fontWeight: 'bold',
-							margin: '0px'
-							}}>Tästä</p>
-						</a>
-					</Link>
+					<ImageContainer>
+							<img src={image} alt="Welcome to Ringit" /> 
+					</ImageContainer>
+		
 					<div>
 					<Link href="/profile">
 						<a>
@@ -99,6 +89,22 @@ const Home = () => {
 						<a>
 							<SignInButton >Tai kirjaudu sisään</SignInButton>
 
+						</a>
+					</Link>
+					<p style={{
+						textAlign: 'center',
+						margin: '0px'}}>
+							Olet vain pienen askeleen päässä oman ringin rakentamisesta. Voit vilkaista lisätietoa palvelustamme
+					</p>
+					<Link href="/about">
+						<a >
+							<p style={{
+							color: '#275EFE', 
+							textAlign: 'center',
+							textDecoration: 'underline',
+							fontWeight: 'bold',
+							margin: '0px'
+							}}>Tästä</p>
 						</a>
 					</Link>
 					</div>

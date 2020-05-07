@@ -55,9 +55,10 @@ const AccordionBox = styled.div `
 const ContentBlock = (props) => {
 	const context = useContext(AppContext)  
 	useEffect(() => {
-		// context.GetRingitByOwner(context.user.email);
+		console.log(context, props)
+		context.GetRingitByOwner(context.user.email);
 	}, [])
-	const AccordionContent = props.ringit.map((item, i) => 
+	const AccordionContent = context.ringit.map((item, i) => 
 			<AccordionBox key={i}>
 				<Gx col={10} breakpoint={100}>
 					<Link href={`/rinki?id=${item.id}`} >

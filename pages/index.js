@@ -23,7 +23,7 @@ const ImageContainer = styled.div`
 
 	`;
 	const Image = styled.img`
-	max-height: 30vh;
+	max-height: 300px;
 
 
 	`
@@ -41,7 +41,7 @@ const RegisterButton = styled.button `
 	font-size: 20px;
 	padding-left: auto;
 	padding-right: auto;
-	margin-top: 50px;
+	margin-top: 10px;
 	width: 500px;
 	@media (max-width: ${props => props.theme.screenSize.tablet}) {
 		width: 100%;
@@ -73,14 +73,14 @@ const Home = () => {
 			<Layout title="Home" >
 				<HomeContainer>
 					
-					<h1 style={{
-						textAlign: 'center'}}>
-							Tervetuloa Ringit.fi palveluun.
-					</h1>
+					
 					<ImageContainer>
 							<Image src={image} alt="Welcome to Ringit" /> 
 					</ImageContainer>
-		
+					<h1 style={{
+						textAlign: 'center'}}>
+							Ringit.fi
+					</h1>
 					<div>
 					<Link href="/profile">
 						<a>

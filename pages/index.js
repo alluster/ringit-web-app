@@ -2,7 +2,7 @@ import React from 'react';
 import Layout from '../layouts/layoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
-const image = './intro.png'
+const image = './intro.svg'
 
 
 const HomeContainer = styled.div`

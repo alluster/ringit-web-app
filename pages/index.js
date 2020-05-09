@@ -24,6 +24,7 @@ const ImageContainer = styled.div`
 	`;
 	const Image = styled.img`
 	max-height: 300px;
+	image-rendering: pixelated;
 
 
 	`

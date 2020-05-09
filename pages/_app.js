@@ -2,17 +2,27 @@ import App from 'next/app';
 import Provider from '../context/Provider';
 import React from 'react';
 import { Auth0Provider } from 'use-auth0-hooks';
+import styled from 'styled-components';
 import 'react-week-calendar/dist/style.less';
+const image = "./loader.svg"
+
+const ImageContainer = styled.div`
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+
+	`;
+const Image = styled.img`
+	vertical-align: middle;
+	max-height: 300px;
+`;
+
 
 const onRedirecting = () => {
 	return (
-		<div>
-			<h1>Signing you in</h1>
-			<p>
-				In order to access this page you will need to sign in.
-				Please wait while we redirect you to the login page...
-			</p>
-		</div>
+		<ImageContainer>
+			<Image src={image} />
+		</ImageContainer>
 	);
 };
 class MyApp extends App {

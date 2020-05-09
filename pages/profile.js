@@ -1,7 +1,6 @@
 import React from 'react';
 import Layout from '../layouts/layout';
 import Container from '../components/Container';
-// import withAuth  from '../components/withAuth';
 import { withAuth, withLoginRequired } from 'use-auth0-hooks';
 import ContentBlock from '../components/ContentBlock';
 import styled from 'styled-components';

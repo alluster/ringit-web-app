@@ -118,6 +118,21 @@ app.prepare().then(() => {
 		});
 
 	})
+	server.get('/api/deleterinki/:id', (req, res) => {
+		pool.getConnection(function(err, connection) {
+			if (err) throw err; 
+			query = SQL`DELETE FROM ringit WHERE id=${req.params.id}`
+			connection.query(
+				query,
+				function (error, results, fields) {
+					res.send(results)
+					connection.release();
+					if (error) throw error;
+				}
+			);
+		});
+
+	})
     server.get('*', (req, res) => {
         return handle(req, res);
     });

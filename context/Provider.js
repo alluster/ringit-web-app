@@ -49,6 +49,16 @@ const Provider = ({children}) => {
 		.finally(function () {
 		});
 	}
+	const DeleteRinki = async (id) => {
+		await axios.get(`/api/deleterinki/${id}`, {
+		})
+
+		.catch(function (error) {
+			console.log(error);
+		})
+		.finally(function () {
+		});
+	}
 	useEffect(() => {
 	}, []);
         return (
@@ -56,6 +66,7 @@ const Provider = ({children}) => {
                 value={{
 					GetRingitByOwner,
 					GetRinkiById,
+					DeleteRinki,
 					rinki,
 					ringit,
 					signup,

@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react';
 import styled from 'styled-components';
 import { AppContext } from  '../../context/Context';
 import axios from 'axios';
+import { withRouter } from '../../node_modules/next/router';
+import PropTypes from 'prop-types';
 
 
 
@@ -47,11 +49,11 @@ const SubmitButton = styled.button `
 `;
 
 
-const AddRinki = () => {
+const AddRinki = (props) => {
 	const initialState = {
 		owner: "",
 		created: Date.now(),
-		name: "",
+		name: "Anna ringille nimi",
 		location: "",
 		image: "",
 		description: ""
@@ -80,6 +82,8 @@ const AddRinki = () => {
 				}	
 			})
 			.then(clearState())
+			.then(alert("Uusi rinki on lisätty"))
+			.then(props.router.push('/profile'))
 		} 
 		catch (error) {
 			console.error(error)
@@ -97,5 +101,9 @@ const AddRinki = () => {
         </div>
     )
 }
+AddRinki.propTypes = {
+	props: PropTypes.any,
+	router: PropTypes.any,
 
-export default AddRinki;
+ };
+export default withRouter(AddRinki);

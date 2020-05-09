@@ -9,7 +9,10 @@ const image = "./loader.svg"
 const ImageContainer = styled.div`
 	display: inline-block;
 	height: 100%;
+	margin-top: 40vh;
 	vertical-align: middle;
+	text-align: center;
+	width: 100%;
 
 	`;
 const Image = styled.img`
@@ -35,7 +38,7 @@ class MyApp extends App {
 			onRedirecting={onRedirecting}
 			domain={`${process.env.AUTHO_DOMAIN}`}
 			clientId={`${process.env.AUTHO_CLIENT_ID}`}
-			redirectUri={`${process.env.AUTHO_REDIRECT_URI}` }
+			redirectUri={`${process.env.AUTHO_REDIRECT_URI}`}
 		>
 			<Provider>
 				<Component {...pageProps} />

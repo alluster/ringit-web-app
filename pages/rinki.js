@@ -8,11 +8,23 @@ import { AppContext } from '../context/Context';
 import Reservation from '../components/Reservation';
 import axios from 'axios';
 import Button from '../components/Button';
+import Accordion from '../components/Accordion';
+import { faTrash, faUser } from '@fortawesome/free-solid-svg-icons'
+import styled from 'styled-components';
+
+const AccordionContainer = styled.div`
+	padding: 15px;
+	min-height: 20px;
+`
 
 const Rinki = (props) => {
-
-
-
+	const handleClick = (e) => {
+		e.preventDefault()
+		context.DeleteRinki(props.rinki.id);
+		props.router.push('/profile');
+		alert("Rinki on poistettu")
+	}
+	
 	const context = useContext(AppContext)  
 	const [ setUserInRinki ] = useState(false)
 	const addUserToRinki = async (e) => {
@@ -35,8 +47,7 @@ const Rinki = (props) => {
 	// console.log(props.rinkiusers)
 	// console.log('user is in the rinki:', userInRinki)
 
-
-	const users = () => { return ( props.rinkiusers.map((item, i) =>  <p key={i}>{item.user_email}</p>))}
+	const users = () => { return ( props.rinkiusers.map((item, i) =>  <Accordion key={i} header={item.user_email} icon={faUser}></Accordion>))}
 	const inrinki =  () => { 
 		return (props.rinkiusers.filter(user => 
 			(!user.id_user === context.user.sub ? setUserInRinki(true) : null)
@@ -58,6 +69,14 @@ useEffect(() => {
 				<Reservation />
 				<h4>Ringin jäsenet</h4>
 				{users()}
+				<h4>Asetukset</h4>
+				<Accordion header="Poista Rinki" icon={faTrash}>
+					<AccordionContainer>
+						<p>Oletko varma että haluat poistaa ringin? Toimintoa ei voi perua ja kaikki ringin jäsenet poistetaan ringistä automaattisesti.</p>
+						<Button onClick={e => handleClick(e)}>Poista rinki</Button>
+
+					</AccordionContainer>
+					</Accordion>
 			</Container>
 		</Layout>
 	)

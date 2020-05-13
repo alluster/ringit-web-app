@@ -82,7 +82,7 @@ const AddRinki = (props) => {
 				}	
 			})
 			.then(res => {
-				 axios.get('/api/addusertorinki', {
+				axios.get('/api/addusertorinki', {
 					params: {
 						id_user: context.user.sub,
 						id_rinki: res.data.insertId,	

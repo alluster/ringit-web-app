@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 3000;
 var mysql = require('mysql');
 var bodyParser = require('body-parser')
 const SQL = require('sql-template-strings')
-var sslRedirect = require('heroku-ssl-redirect');
 
 
  
@@ -25,7 +24,6 @@ var sslRedirect = require('heroku-ssl-redirect');
 app.prepare().then(() => {
     const server = express();
     server.use(bodyParser.json())
-	server.use(sslRedirect());
     server.use(bodyParser.urlencoded({
       extended: true
     }));

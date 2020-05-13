@@ -53,6 +53,8 @@ app.prepare().then(() => {
 			connection.query(
 				query,
 				function (error, results, fields) {
+					res.send(results)
+
 				connection.release();
 				if (error) throw error;
 			});

@@ -81,6 +81,16 @@ const AddRinki = (props) => {
 					
 				}	
 			})
+			.then(res => {
+				 axios.get('/api/addusertorinki', {
+					params: {
+						id_user: context.user.sub,
+						id_rinki: res.data.insertId,	
+						user_email: context.user.email	
+					}
+				})
+
+			} )
 			.then(clearState())
 			.then(alert("Uusi rinki on lisätty"))
 			.then(props.router.push('/profile'))

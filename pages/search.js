@@ -47,7 +47,7 @@ const Search = () => {
 
 
 	return(
-		<Layout title="Search" >
+		<Layout title="Haku" >
 			<Container>
 				<h3>Etsi rinkejä koodilla:</h3>
 				<Input placeholder="Anna koodi" name="search" type="text" />

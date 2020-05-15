@@ -31,7 +31,7 @@ const AddNewButton = styled.button `
 const Profile = () => {
 	
 	return(
-		<Layout title="Profile" >
+		<Layout title="Oma sivuni" >
 			<Container>
 				<h3>Oma sivu</h3>
 			

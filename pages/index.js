@@ -71,7 +71,7 @@ const Home = () => {
 
 	
 	return(
-		<Layout title="Home" >
+		<Layout title="Ringit" >
 			<HomeContainer>
 				
 				

@@ -11,7 +11,7 @@ const Addrinki = () => {
 	}, []);
 	return(
 		<Layout 
-			title="Uusi rinki"
+			title="Lisää uusi rinki"
 		>
 			<Container>
 				<h3>Luo uusi Rinki</h3>

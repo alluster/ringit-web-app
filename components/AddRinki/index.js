@@ -53,7 +53,7 @@ const AddRinki = (props) => {
 	const initialState = {
 		owner: "",
 		created: Date.now(),
-		name: "Anna ringille nimi",
+		name: "",
 		location: "",
 		image: "",
 		description: ""

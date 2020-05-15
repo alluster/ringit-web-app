@@ -7,7 +7,6 @@ import styled from 'styled-components';
 import Link from 'next/link';
 // import { AppContext } from '../context/Context';
 // import fetch from 'isomorphic-unfetch';
-import PropTypes from 'prop-types';
 
 const AddNewButton = styled.button `
 	background-color: ${props => props.theme.colors.brand.primary};
@@ -29,7 +28,7 @@ const AddNewButton = styled.button `
 		width: 100%;
     }
 `;
-const Profile = (props) => {
+const Profile = () => {
 	
 	return(
 		<Layout title="Profile" >
@@ -37,7 +36,6 @@ const Profile = (props) => {
 				<h3>Oma sivu</h3>
 			
 				<ContentBlock 
-					ringit={props.ringit}
 					blockName="Ringit"
 				/>
 				<Link href="/addrinki">
@@ -59,8 +57,5 @@ const Profile = (props) => {
 	
 	
 //   };
-  Profile.propTypes = {
 
-	ringit: PropTypes.any
- };
 export default withLoginRequired(withAuth(Profile))

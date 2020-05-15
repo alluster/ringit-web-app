@@ -59,6 +59,7 @@ const Provider = ({children}) => {
 		.finally(function () {
 		});
 	}
+	
 	useEffect(() => {
 	}, []);
         return (

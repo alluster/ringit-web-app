@@ -5,3 +5,4 @@ routes
     .add('about', '/about')
     .add('contact', '/contact')
     .add('rinki', 'rinki/:id')
+	.add('profile', '/profile')

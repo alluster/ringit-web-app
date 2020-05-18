@@ -74,7 +74,6 @@ const Home = () => {
 		<Layout title="Ringit" >
 			<HomeContainer>
 				
-				
 				<ImageContainer>
 						<Image src={image} alt="Welcome to Ringit" /> 
 				</ImageContainer>

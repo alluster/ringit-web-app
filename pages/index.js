@@ -91,7 +91,7 @@ const Home = () => {
 				<p style={{
 					textAlign: 'center',
 					margin: '0px'}}>
-						Olet vain pienen askeleen päässä oman ringin rakentamisesta. Voit vilkaista lisätietoa palvelustamme
+						Olet vain pienen askeleen päässä oman ringin rakentamisesta. Voit vilkaista lisätietoa palvelustamme.
 				</p>
 				<Link href="/about">
 					<a >

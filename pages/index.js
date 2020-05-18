@@ -70,7 +70,6 @@ const SignInButton = styled.button `
 const Home = () => {
 	const context = useContext(AppContext)
 
-	
 	return(
 		<Layout title="Ringit" >
 			<HomeContainer>

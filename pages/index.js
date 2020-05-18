@@ -66,6 +66,7 @@ const SignInButton = styled.button `
 		width: 100%;
     }
 `;
+
 const Home = () => {
 	const context = useContext(AppContext)
 

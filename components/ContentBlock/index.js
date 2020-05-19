@@ -1,8 +1,5 @@
 import React, { useContext, useEffect } from 'react';
 import styled, { css } from 'styled-components';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faBookmark } from '@fortawesome/free-solid-svg-icons'
-// import Link from 'next/link';import { AppContext } from  '../context/Context'
 import { AppContext } from  '../../context/Context'
 import Link from 'next/link'
 import Gx from '@tgrx/gx';

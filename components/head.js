@@ -3,8 +3,8 @@ import NextHead from 'next/head';
 import { string } from 'prop-types';
 
 const fallbackRoute = '/';
-const SITE_URL_SECURE = 'https://ringit.herokuapp.com';
-const SITE_URL = 'https://ringit.herokuapp.com';
+const SITE_URL_SECURE = 'https://ringit.fi';
+const SITE_URL = 'https://ringit.fi';
 const fallbackOgImage = SITE_URL + '/fallbackOgImage.jpg';
 const fallbackOgImageSecure = SITE_URL_SECURE + '/fallbackOgImage.jpg';
 const metaDescription = 'Rakenna rinki';
@@ -22,19 +22,19 @@ const Head = ({ title, ogImage, route }) => {
 	
     return (
         <NextHead>
-            <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+			<meta httpEquiv="Content-Security-Policy" />
             <meta property="og:url" content={SITE_URL + route || SITE_URL} />
             <meta property="og:title" content={`${title}` || fallbackTitle} />
             <meta property="og:type" content="website" />
             <meta property="og:description" content={description || metaDescription} />
             <meta name="description" content={description || metaDescription} />
 			<meta property="og:image:type" content="image/jpeg" />
-			<meta property="og:image:alt" content="Certify" />
+			<meta property="og:image:alt" content="Ringit.fi" />
 			<meta property="og:image:width" content="400" />
 			<meta property="og:image:height" content="300" />
             <meta property="og:image" content={ogImage || fallbackOgImage} />
 			<meta property="og:image:secure_url" content={ogImage || fallbackOgImageSecure} />
-			<title>{title ? title : 'Certify'}</title>
+			<title>{title ? title : 'Ringit.fi'}</title>
         </NextHead>
     );
 };

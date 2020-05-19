@@ -22,7 +22,6 @@ const Head = ({ title, ogImage, route }) => {
 	
     return (
         <NextHead>
-			<meta httpEquiv="Content-Security-Policy" />
             <meta property="og:url" content={SITE_URL + route || SITE_URL} />
             <meta property="og:title" content={`${title}` || fallbackTitle} />
             <meta property="og:type" content="website" />

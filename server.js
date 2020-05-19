@@ -31,6 +31,8 @@ app.prepare().then(() => {
     }));
    
 	server.get('/api/getrinkibyid/:id', (req, res) => {
+		res.redirect("https://" + req.headers.host + req.url);
+
         pool.getConnection(function(err, connection) {
 
 			if (err) throw err; 

@@ -4,6 +4,8 @@ import React from 'react';
 import { Auth0Provider } from 'use-auth0-hooks';
 import styled from 'styled-components';
 import 'react-week-calendar/dist/style.less';
+import { useRouter } from 'next/router'
+
 const image = "./loader.svg"
 
 const ImageContainer = styled.div`
@@ -27,6 +29,16 @@ const onRedirecting = () => {
 			<Image src={image} />
 		</ImageContainer>
 	);
+}
+
+const onLoginError = (err) => {
+	const Router = useRouter()
+	Router.push({
+		pathname: '/',
+		query: {
+			message: err.error_description || err.message
+		}
+	})
 };
 class MyApp extends App {
 
@@ -35,6 +47,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
     return (
 		<Auth0Provider
+			onLoginError={onLoginError}
 			onRedirecting={onRedirecting}
 			domain={`${process.env.AUTHO_DOMAIN}`}
 			clientId={`${process.env.AUTHO_CLIENT_ID}`}

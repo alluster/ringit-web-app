@@ -16,7 +16,6 @@ const AccordionContainer = styled.div`
 	padding: 15px;
 	min-height: 20px;
 `
-
 const Rinki = (props) => {
 	const handleClick = (e) => {
 		e.preventDefault()

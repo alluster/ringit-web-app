@@ -83,8 +83,8 @@ useEffect(() => {
 }
 
 Rinki.getInitialProps = async function(router) {
-	const rinkidata = await fetch(`${process.env.AUTHO_RETURN_URL}/api/getrinkibyid/${router.query.id}`)
-	const rinkiusers = await fetch(`${process.env.AUTHO_RETURN_URL}/api/getrinkiusers/${router.query.id}`)
+	const rinkidata = await fetch(`${process.env.BASE_URL}/api/getrinkibyid/${router.query.id}`)
+	const rinkiusers = await fetch(`${process.env.BASE_URL}/api/getrinkiusers/${router.query.id}`)
 	const users = await rinkiusers.json()
 	const data = await rinkidata.json()
 	return {

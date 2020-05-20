@@ -3,6 +3,7 @@ import Layout from '../layouts/layoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { AppContext } from '../context/Context';
+import { withRouter } from 'next/router';
 
 const image = './intro.svg'
 
@@ -79,12 +80,26 @@ const Home = () => {
 					textAlign: 'center'}}>
 						Ringit.fi
 				</h1>
-				<div>
-					<RegisterButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Rekisteröidy</RegisterButton>
-				</div>
-				<div>
-					<SignInButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Tai kirjaudu sisään</SignInButton>
-				</div>
+					{
+						context.isAuthenticated ?
+						
+						<div>
+							<div>
+							<RegisterButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Rekisteröidy</RegisterButton>
+						</div>
+						<div>
+							<SignInButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Tai kirjaudu sisään</SignInButton>
+						</div>
+						</div>
+						:
+						<Link href="/profile">
+							<a>
+							<RegisterButton>Siirry profiilisivulle</RegisterButton>
+							</a>
+						</Link> 
+						
+					}
+				
 				<p style={{
 					textAlign: 'center',
 					margin: '0px'}}>
@@ -106,4 +121,4 @@ const Home = () => {
 	)
 }
 
-export default Home;
+export default withRouter(Home);

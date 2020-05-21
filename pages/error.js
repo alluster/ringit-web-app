@@ -1,10 +1,9 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Layout from '../layouts/layoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { AppContext } from  '../context/Context';
-import { withCookies, Cookies } from 'react-cookie';
-
+import { destroyCookie } from 'nookies'
 
 const HomeContainer = styled.div`
 	text-align: center;
@@ -15,51 +14,12 @@ const HomeContainer = styled.div`
 
 `
 
-
-
-const RegisterButton = styled.button `
-	background-color: ${props => props.theme.colors.brand.primary};
-	color: white;
-	-webkit-text-fill-color: white;
-	height: 40px; 
-	border-radius: 20px;
-	text-align: center;
-	line-height: 40px;
-	font-weight: bold;
-	font-size: 20px;
-	padding-left: auto;
-	padding-right: auto;
-	margin-top: 50px;
-	width: 500px;
-	@media (max-width: ${props => props.theme.screenSize.tablet}) {
-		width: 100%;
-    }
-`;
-
-const SignInButton = styled.button `
-	background-color: transparent;
-	color: ${props => props.theme.colors.brand.primary};
-	-webkit-text-fill-color: ${props => props.theme.colors.brand.primary};
-	height: 40px; 
-	border-radius: 20px;
-	// border: 2px solid ${props => props.theme.colors.brand.primary};
-	text-align: center;
-	line-height: 40px;
-	font-weight: bold;
-	font-size: 14px;
-	padding-left: auto;
-	padding-right: auto;
-	width: 500px;
-	@media (max-width: ${props => props.theme.screenSize.tablet}) {
-		width: 100%;
-    }
-`;
 const ErrorPage = () => {
 	const context = useContext(AppContext)
 
 	useEffect(() => {
-		cookies.remove('auth0.is.authenticated')
 
+		destroyCookie(null, 'auth0.is.authenticated')
 		
 	}, [])
 		return(
@@ -90,4 +50,4 @@ const ErrorPage = () => {
 		)
 }
 
-export default withCookies(ErrorPage);
+export default ErrorPage;

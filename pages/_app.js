@@ -11,15 +11,21 @@ const image = "./loader.svg"
 const ImageContainer = styled.div`
 	display: inline-block;
 	height: 100%;
-	margin-top: 40vh;
+	margin-top: auto;
+	margin-bottom: auto;
 	vertical-align: middle;
 	text-align: center;
 	width: 100%;
 
 	`;
 const Image = styled.img`
-	vertical-align: middle;
-	max-height: 300px;
+	margin: 0;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	max-height: 200px;
 `;
 
 

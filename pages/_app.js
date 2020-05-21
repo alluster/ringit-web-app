@@ -34,7 +34,7 @@ const onRedirecting = () => {
 const onLoginError = (err) => {
 	const Router = useRouter()
 	Router.push({
-		pathname: '/',
+		pathname: '/profile',
 		query: {
 			message: err.error_description || err.message
 		}

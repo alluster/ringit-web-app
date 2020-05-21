@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Link from 'next/link';
 import { AppContext } from '../context/Context';
 import { withRouter } from 'next/router';
+import { destroyCookie } from 'nookies'
 
 const image = './intro.svg'
 
@@ -68,6 +69,7 @@ const SignInButton = styled.button `
     }
 `;
 
+
 const Home = () => {
 	const context = useContext(AppContext)
 	console.log(context.isAuthenticated)
@@ -86,10 +88,10 @@ const Home = () => {
 						
 						<div>
 							<div>
-							<RegisterButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Rekisteröidy</RegisterButton>
+							<RegisterButton onClick={() => destroyCookie(null, 'auth0.is.authenticated') && context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Rekisteröidy</RegisterButton>
 						</div>
 						<div>
-							<SignInButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Tai kirjaudu sisään</SignInButton>
+							<SignInButton onClick={() => destroyCookie(null, 'auth0.is.authenticated') && context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Tai kirjaudu sisään</SignInButton>
 						</div>
 						</div>
 						:

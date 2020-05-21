@@ -3,6 +3,7 @@ import Layout from '../layouts/layoutNoNavigation';
 import styled from 'styled-components';
 import Link from 'next/link';
 import { AppContext } from  '../context/Context';
+import { withCookies, Cookies } from 'react-cookie';
 
 
 const HomeContainer = styled.div`
@@ -56,7 +57,11 @@ const SignInButton = styled.button `
 const ErrorPage = () => {
 	const context = useContext(AppContext)
 
-	
+	useEffect(() => {
+		cookies.remove('auth0.is.authenticated')
+
+		
+	}, [])
 		return(
 			<Layout title="Error" >
 				<HomeContainer>
@@ -85,4 +90,4 @@ const ErrorPage = () => {
 		)
 }
 
-export default ErrorPage;
+export default withCookies(ErrorPage);

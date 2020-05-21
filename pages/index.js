@@ -70,6 +70,7 @@ const SignInButton = styled.button `
 
 const Home = () => {
 	const context = useContext(AppContext)
+	console.log(context.isAuthenticated)
 	return(
 		<Layout title="Ringit" >
 			<HomeContainer>

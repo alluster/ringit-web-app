@@ -80,13 +80,20 @@ const GlobalStyle = createGlobalStyle`
         all: unset;
     }
     a:hover {
-        all: unset;
+		all: unset;
+		cursor: pointer;
+
     }
     button {
 		all: unset;
 		font-family: 'Open Sans', sans-serif;
+		
 
 	}
+	button:hover {
+		cursor: pointer !important;
+	}
+
 
 
 

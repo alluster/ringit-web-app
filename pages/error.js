@@ -58,7 +58,7 @@ const ErrorPage = () => {
 
 	
 		return(
-			<Layout title="About" >
+			<Layout title="Error" >
 				<HomeContainer>
 				<Link href="/">
 					<a >

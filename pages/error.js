@@ -60,32 +60,26 @@ const ErrorPage = () => {
 		return(
 			<Layout title="Error" >
 				<HomeContainer>
-				<Link href="/">
-					<a >
-						<p style={{
-						color: '#275EFE', 
-						textAlign: 'center',
-						textDecoration: 'underline',
-						fontWeight: 'bold',
-						marginTop: '20px;'
-						}}>Palaa etusivulle</p>
-					</a>
-				</Link>
+					<Link href="/profile" >
+						<a onClick={() => context.logout({ returnTo: process.env.AUTHO_RETURN_URL })}>
+							<p style={{
+							color: '#275EFE', 
+							textAlign: 'center',
+							textDecoration: 'underline',
+							fontWeight: 'bold',
+							marginTop: '20px;'
+							}}>Palaa etusivulle</p>
+						</a>
+					</Link>
+						
+					<h1 style={{
+						textAlign: 'center'}}>
+							Voi ei!
+					</h1>
+					<h4>Törmäsimme ongelmaan</h4>
+					<h2>Parasta olisi jos palaat takaisin etusivulle..</h2>
+						
 					
-				<h1 style={{
-					textAlign: 'center'}}>
-						Törmäsimme johonkin ongelmaan
-				</h1>
-				<h4>Olemme pahoillamme. Selvitämme mistä on kyse</h4>
-				<h2>Parasta olisi jos palaat takaisin etusivulle..</h2>
-					
-				<div>
-					<RegisterButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Rekisteröidy</RegisterButton>
-				</div>
-				<div>
-					<SignInButton onClick={() => context.login({ returnTo: process.env.AUTHO_REDIRECT_URI })}>Tai kirjaudu</SignInButton>
-				</div>
-
 				</HomeContainer>
 			</Layout>
 		)

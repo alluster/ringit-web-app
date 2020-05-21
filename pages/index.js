@@ -81,7 +81,7 @@ const Home = () => {
 						Ringit.fi
 				</h1>
 					{
-						context.isAuthenticated ?
+						!context.isAuthenticated ?
 						
 						<div>
 							<div>

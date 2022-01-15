@@ -34,7 +34,7 @@
     "isomorphic-unfetch": "^3.0.0",
     "keycloak-js": "^9.0.3",
     "less": "^3.11.1",
-    "marked": "^0.7.0",
+    "marked": "^4.0.10",
     "moment": "^2.25.3",
     "mysql": "^2.18.1",
     "next": "^9.3.6",
